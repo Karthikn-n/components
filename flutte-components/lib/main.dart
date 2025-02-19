@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Platform.isIOS ? AndroidApp() : AndroidApp();
+    return AndroidApp();
   }
 }
