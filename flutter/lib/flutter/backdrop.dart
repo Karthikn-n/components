@@ -15,7 +15,6 @@ class BackdropFilterExample extends StatelessWidget {
             "https://wallpapercave.com/wp/wp4805734.jpg",
             fit: BoxFit.cover,
           ),
-
           // Blurred Container (Frosted Glass Effect)
           Center(
             child: ClipRRect(
