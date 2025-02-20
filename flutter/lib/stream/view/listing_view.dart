@@ -1,6 +1,6 @@
+import 'package:components/stream/api_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:magic_alumni/stream/api_service.dart';
 
 class CommentScreen extends StatefulWidget {
   const CommentScreen({super.key});
