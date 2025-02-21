@@ -7,7 +7,7 @@ class CommentStream {
   final StreamController<List<Map<String, dynamic>>> _controller =
       StreamController<List<Map<String, dynamic>>>.broadcast();
 
-  List<Map<String, dynamic>> _comments = [];
+  final List<Map<String, dynamic>> _comments = [];
   int _page = 1;
   final int _limit = 20;
   bool _isFetching = false;

@@ -2,6 +2,9 @@ import 'package:components/flutter/change_dependencies.dart';
 import 'package:components/flutter/fade_tran.dart';
 import 'package:components/flutter/scale_tran.dart';
 import 'package:components/flutter/slide_tran.dart';
+import 'package:components/stream/view/isolate_calling.dart';
+import 'package:components/stream/view/listing_view.dart';
+import 'package:components/websocket/websocket.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -32,6 +35,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () async {
                   bool canPop = await Navigator.maybePop(context);
                   if (!canPop) {
+                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text("No screens to pop!")),
                     );
@@ -71,6 +75,19 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenSizeExample(),)),
                 child: Text("didChangeDependencies()")
               ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PostAndComments(),)),
+                child: Text("Isolate calling")
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CommentScreen(),)),
+                child: Text("Stream implementation")
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => WebSocketExample(),)),
+                child: Text("Web socket")
+              ),
+              SizedBox(height: kToolbarHeight,)
             ],
           ),
         ),
