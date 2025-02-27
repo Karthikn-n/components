@@ -53,8 +53,8 @@ class _CommentScreenState extends State<CommentScreen> {
                   title: Text(comments[index]['name']),
                   subtitle: Text(comments[index]['body']),
                   onTap: () {
-                      print(comments[index]);
-                    },
+                    print(comments[index]);
+                  },
                 );
               },
             ),

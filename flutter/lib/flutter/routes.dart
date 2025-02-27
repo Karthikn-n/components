@@ -1,8 +1,8 @@
 import 'package:components/flutter/backdrop.dart';
-import 'package:components/flutter/cupertino_widgets.dart';
+import 'package:components/components/cupertino/cupertino_home.dart';
 import 'package:components/flutter/drag_drop.dart';
 import 'package:components/flutter/filtted.dart';
-import 'package:components/flutter/home_screen.dart';
+import 'package:components/home_screen.dart';
 import 'package:components/flutter/layout.dart';
 import 'package:components/flutter/listeners.dart';
 import 'package:components/flutter/svg_pictures.dart';

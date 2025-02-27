@@ -284,6 +284,7 @@ class _CupertinoWidgetsState extends State<CupertinoWidgets> {
       },
     );
   }
+  
   void alertIos(){
     showCupertinoDialog(
       context: context, 

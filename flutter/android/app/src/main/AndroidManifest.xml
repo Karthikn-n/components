@@ -1,5 +1,27 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BIO_MERTIC"/>
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- Storage (For Photos, Videos, and Music) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- Contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- Microphone -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- Phone & Call Logs -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <!-- SMS -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- Nearby Devices -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+
     <application
         android:label="components"
         android:name="${applicationName}"

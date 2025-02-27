@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 
@@ -21,7 +22,7 @@ class _WebSocketExampleState extends State<WebSocketExample> {
     super.initState();
 
     // Connect to WebSocket
-    channel = WebSocketChannel.connect(
+    channel = IOWebSocketChannel.connect(
       Uri.parse('wss://echo.websocket.org'), // Replace with your WebSocket URL
     );
 
