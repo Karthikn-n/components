@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 
 class TextFormFieldComponent extends StatelessWidget {
   final String? hintText;
-  final bool isObseure;
+  final bool? isObseure;
   final Widget? prefixIcon;
   final TextInputType? keyboardType;
-  final TextInputAction textInputAction;
+  final TextInputAction? textInputAction;
   final Widget? suffixIcon;
   final int? maxLine;
   final FocusNode? focusNode;
@@ -32,7 +32,7 @@ class TextFormFieldComponent extends StatelessWidget {
     this.hintText, 
     this.contentPadding,
     this.controller, 
-    required this.isObseure,
+    this.isObseure = false,
     this.suffixIcon,
     this.onTap,
     this.borderRadius,
@@ -53,7 +53,7 @@ class TextFormFieldComponent extends StatelessWidget {
     this.prefixIcon,
     this.validator,
     this.keyboardType, 
-    required this.textInputAction,
+    this.textInputAction,
   });
 
   @override
@@ -65,7 +65,7 @@ class TextFormFieldComponent extends StatelessWidget {
       ),
       child: TextFormField(
         controller: controller,
-        obscureText: isObseure,
+        obscureText: isObseure ?? false,
         initialValue: initalValue,
         maxLines: maxLine ?? 1,
         focusNode: focusNode,
@@ -82,11 +82,11 @@ class TextFormFieldComponent extends StatelessWidget {
         onEditingComplete: onEditingComplete,
         validator: validator,
         cursorErrorColor: Colors.redAccent,
-        style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
-          color: Colors.black
-        ),
+        // style: const TextStyle(
+        //   fontSize: 14,
+        //   fontWeight: FontWeight.w500,
+        //   color: Colors.black
+        // ),
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           counterText: '',

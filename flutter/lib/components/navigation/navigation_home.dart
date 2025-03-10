@@ -2,6 +2,7 @@ import 'package:components/components/navigation/components/bottom_to_top_naviga
 import 'package:components/components/navigation/components/fade_navigation.dart';
 import 'package:components/components/navigation/components/inner_screen.dart';
 import 'package:components/components/navigation/components/left_to_right_navigation.dart';
+import 'package:components/components/navigation/components/no_animation.dart';
 import 'package:components/components/navigation/components/right_to_left_navigation.dart';
 import 'package:components/components/navigation/components/top_to_bottom_navigation.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,12 @@ class NavigationHome extends StatelessWidget {
                   Navigator.push(context, FadeNavigation(InnerScreenNavigation()));
                 },
                 child: Text("Fade Navigation"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, NoAnimationNavigation(InnerScreenNavigation()));
+                },
+                child: Text("No Animation"),
               ),
               // ElevatedButton(
               //   onPressed: () {

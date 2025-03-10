@@ -28,7 +28,7 @@ class PermissionService {
       `<string>We need contacts access to sync your contacts</string>`
   *////
 
-  static void contactPermission() async => Permission.contacts.request();
+  static Future<PermissionStatus> contactPermission() async => Permission.contacts.request();
 
   /** 
    Get the Location permission
@@ -39,14 +39,14 @@ class PermissionService {
     
     This will only allow the forground location access Permission to access the location in background we need ask another permission
   *////
-  static void locationPermission() async => Permission.location.request();
+  static Future<PermissionStatus> locationPermission() async => Permission.location.request();
 
   /// This will allow the app to access the location in background for tracking like this 
   /// for that we need access any one of above permission request for android and 
   /// `<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>`
   /// for Ios we need this and string for explanation
   /// `<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>`
-  static void locationAlwaysPermission() async => Permission.locationAlways.request();
+  static Future<PermissionStatus> locationAlwaysPermission() async => Permission.locationAlways.request();
 
   /** // 
    Get the microphone permission
@@ -54,7 +54,7 @@ class PermissionService {
     For ios -> ` <key>NSMicrophoneUsageDescription</key>`
       `<string>We need microphone access for voice recording</string>`
   *////
-  static void microPhonePermission() async => Permission.microphone.request();
+  static Future<PermissionStatus> microPhonePermission() async => Permission.microphone.request();
 
   /** // 
    Get the Storage read, write and manage permission
@@ -65,7 +65,7 @@ class PermissionService {
     For ios writing the images to the gallary -> `<key>NSPhotoLibraryAddUsageDescription</key>`
     `<string>*your app name* would like to save photos from the app to your gallery</string>`
   *////// 
-  static void storagePermission() async => Permission.storage.request();
+  static Future<PermissionStatus> storagePermission() async => Permission.storage.request();
 
   /** // 
    Get the Storage read, write and manage permission
@@ -74,7 +74,7 @@ class PermissionService {
     For ios detect the Blutooth connection -> ` <key>NSBluetoothPeripheralUsageDescription</key>`
     `<string>We need Bluetooth access to detect nearby devices</string>`
   *////// 
-  static void bluetoothConnection() async => Permission.storage.request();
+  static Future<PermissionStatus> bluetoothConnection() async => Permission.storage.request();
 
   /** // 
    Get the Camera permission to scan QR, record video or capture photo
@@ -82,7 +82,7 @@ class PermissionService {
     For ios to get Camera permission -> ` <key>NSCameraUsageDescription</key>`
     `<string>We need Camera access to detect scan QR code</string>`
   *////// 
-  static void cameraPermission() async => Permission.camera.request();
+  static Future<PermissionStatus> cameraPermission() async => Permission.camera.request();
 
   /** 
    Get the sma permission to read OTP
@@ -90,7 +90,13 @@ class PermissionService {
     For ios to get Message reading permission sms app -> ` <key>NSMessageUsageDescription</key>`
     `<string>We need access to your messages to provide this feature.</string>`
   *////
-  static void smsPermission() async => Permission.sms.request();
+  static Future<PermissionStatus> smsPermission() async => Permission.sms.request();
 
+  /// `<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>` This will used in the notification packages
+  /// For if the devices is rebooted the pacakge will knows and send the missed notification on the scheduled time
+  /// Below two permissions are used to schedule the notifications
+  /// `<uses-permission android:name="android.permission.USE_EXACT_ALARM" />`
+  /// `<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />`
+   
   PermissionService._internal();
 }

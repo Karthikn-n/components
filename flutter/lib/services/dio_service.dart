@@ -9,7 +9,7 @@ class DioService {
     static final Dio dio = Dio();
 
     /// Initialize the Dio Service globally add interceptors, baseOptions, etc.
-    Future<void> init() async {
+    static Future<void> init() async {
         dio.options = BaseOptions(
             baseUrl: "https://jsonplaceholder.typicode.com",
             /// If the connection is not established to the server within 10 seconds, it will throw a TimeoutException.
@@ -49,11 +49,11 @@ class DioService {
         ));
 
         /// Add the LogInterceptor to the Dio instance for logging the request and response
-        dio.interceptors.add(LogInterceptor(
-            request: true,
-            requestBody: true,
-            responseBody: true,
-        ));
+        // dio.interceptors.add(LogInterceptor(
+        //     request: true,
+        //     requestBody: true,
+        //     responseBody: true,
+        // ));
     } 
 
     DioService._internal();

@@ -5,6 +5,7 @@ import 'package:components/components/views/components/grid_view_component.dart'
 import 'package:components/components/views/components/infinite_scroll_component.dart';
 import 'package:components/components/views/components/list_view_separated_component.dart';
 import 'package:components/components/views/components/listview_component.dart';
+import 'package:components/components/views/components/login_view_component.dart';
 import 'package:components/components/views/components/page_view_component.dart';
 import 'package:components/components/views/components/sliver_components.dart';
 import 'package:components/components/views/components/tabs_component.dart';
@@ -60,6 +61,10 @@ class ViewsHome extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DismissibleViewComponent(),)), 
                 child: Text("Dismissible View")
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginViewComponent(),)), 
+                child: Text("Login view")
               ),
               ElevatedButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FormviewComponent(),)), 
