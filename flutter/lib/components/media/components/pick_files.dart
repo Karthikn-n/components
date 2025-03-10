@@ -2,6 +2,7 @@ import 'package:components/common/title.dart';
 import 'package:components/components/media/model/file_details.dart';
 import 'package:components/components/media/service/file_handling_service.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class PickFilesComponent extends StatefulWidget {
   const PickFilesComponent({super.key});
@@ -38,10 +39,21 @@ class _PickFilesComponentState extends State<PickFilesComponent> {
             TitleText("Shoot from camera"),
             ElevatedButton(
               onPressed: () async {
-                FileDetailsModel? file = await _service.getCameraFile();
-                setState(() {
-                  _singleFile = file;
-                });
+                await Permission.camera.request();
+                if(await Permission.camera.isDenied) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Camera Permission denied"), 
+                      action: SnackBarAction(label: "allow", onPressed: () async => await openAppSettings(),)
+                      
+                    )
+                  );
+                } else {
+                  FileDetailsModel? file = await _service.getCameraFile();
+                  setState(() {
+                    _singleFile = file;
+                  });
+                }
               }, 
               child: Text("Pick Camera image")
             ),
