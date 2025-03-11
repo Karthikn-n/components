@@ -12,7 +12,6 @@ import 'package:components/components/views/views_home.dart';
 import 'package:components/flutter/change_dependencies.dart';
 import 'package:components/permissions/permission_component_home.dart';
 import 'package:components/provider/theme_provider.dart';
-import 'package:components/services/connectivity_service.dart';
 import 'package:components/stream/view/isolate_calling.dart';
 import 'package:components/stream/view/listing_view.dart';
 import 'package:components/websocket/websocket.dart';

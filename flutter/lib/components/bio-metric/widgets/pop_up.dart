@@ -5,7 +5,7 @@ import 'package:share_plus/share_plus.dart';
 
 
 void qrPopup(BuildContext context) async {
-  final String _url = "https://www.github.com";
+  final String url = "https://www.github.com";
 
   showDialog(
     context: context,
@@ -19,7 +19,7 @@ void qrPopup(BuildContext context) async {
               children: [
                 TitleText("Scan this QR Code"),
                 QrImageView(
-                  data: _url, 
+                  data: url, 
                   size: 200, 
                   backgroundColor: Colors.white,
                 ),
@@ -29,7 +29,7 @@ void qrPopup(BuildContext context) async {
         ),
         actions: [
           TextButton(onPressed: (){}, child: Text("Download")),
-          TextButton(onPressed: () async => await Share.share(_url), child: Text("Share as URL")),
+          TextButton(onPressed: () async => await Share.share(url), child: Text("Share as URL")),
         ],
       );
     },

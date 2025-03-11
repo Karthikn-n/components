@@ -110,15 +110,17 @@ class _LoginViewComponentState extends State<LoginViewComponent> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () async => await _socialLoginService.signInWithGitHub().then((value) {
-                        if(value == null) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text("Authentication Cancelled"))
-                          );
-                        } else {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoWidget(provider: "Github", userCredential: value,),));
-                        }
-                      },),  
+                      onPressed: () async => {
+                      //   await _socialLoginService.signInWithGitHub().then((value) {
+                      //   if(value == null) {
+                      //     ScaffoldMessenger.of(context).showSnackBar(
+                      //       SnackBar(content: Text("Authentication Cancelled"))
+                      //     );
+                      //   } else {
+                      //     Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfoWidget(provider: "Github", userCredential: value,),));
+                      //   }
+                      // },)
+                      },  
                       icon: SizedBox(
                         height: 20,
                         width: 20,
