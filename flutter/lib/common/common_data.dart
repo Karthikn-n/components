@@ -16,3 +16,6 @@ final imageUrl = [
   "https://www.pixelstalk.net/wp-content/uploads/2016/08/Nature-beautiful-desktop-images-cool.jpg",
   "https://th.bing.com/th/id/R.b95be29e4e73a35f204b1cd5b1e46f1a?rik=tFmv6fhESVfdoQ&riu=http%3a%2f%2fs1.picswalls.com%2fwallpapers%2f2017%2f12%2f11%2fnature-desktop-backgrounds_123026996_313.jpg&ehk=GnqPLogpbymTvYSqUfdK84qDd%2ff7IO6yl%2fgw5v6OIis%3d&risl=&pid=ImgRaw&r=0",
 ];
+
+final String key1="AIzaSyDbZcQiUQy";
+final String key2="YyCN08yz8OQxQd4z4eRmMqA";
