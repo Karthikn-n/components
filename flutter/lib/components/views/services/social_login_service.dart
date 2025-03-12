@@ -39,50 +39,50 @@ class SocialLoginService {
     }
   }
 
-//   Future<UserCredential?> signInWithGitHub() async {
-//   try {
-//     final clientId = githubClientID;
-//     final clientSecret = githubClientSecert;
-//     final redirectUri = "https://alumni-app-65e09.firebaseapp.com/__/auth/handler";
+  Future<UserCredential?> signInWithGitHub() async {
+  try {
+    // final clientId = githubClientID;
+    // final clientSecret = githubClientSecert;
+    // final redirectUri = "https://alumni-app-65e09.firebaseapp.com/__/auth/handler";
 
-//     // Step 1: Open GitHub Authentication URL
-//     final result = await FlutterWebAuth.authenticate(
-//       url: "https://github.com/login/oauth/authorize?client_id=$clientId&redirect_uri=$redirectUri&scope=read:user,user:email",
-//       callbackUrlScheme: "components",
-//     );
+    // Step 1: Open GitHub Authentication URL
+    // final result = await FlutterWebAuth.authenticate(
+    //   url: "https://github.com/login/oauth/authorize?client_id=$clientId&redirect_uri=$redirectUri&scope=read:user,user:email",
+    //   callbackUrlScheme: "components",
+    // );
 
-//     // Step 2: Extract Code from URL
-//     final code = Uri.parse(result).queryParameters['code'];
+    // // Step 2: Extract Code from URL
+    // final code = Uri.parse(result).queryParameters['code'];
 
-//     // Step 3: Exchange Code for Access Token
-//     final response = await _dio.post(
-//       "https://github.com/login/oauth/access_token",
-//       options: Options(
-//         headers: {"Accept": "application/json"}
-//       ),
-//       data: {
-//         "client_id": clientId,
-//         "client_secret": clientSecret,
-//         "code": code!,
-//       },
-//     );
+    // // Step 3: Exchange Code for Access Token
+    // final response = await _dio.post(
+    //   "https://github.com/login/oauth/access_token",
+    //   options: Options(
+    //     headers: {"Accept": "application/json"}
+    //   ),
+    //   data: {
+    //     "client_id": clientId,
+    //     "client_secret": clientSecret,
+    //     "code": code!,
+    //   },
+    // );
 
-//     final accessToken = json.decode(response.data)["access_token"];
+    // final accessToken = json.decode(response.data)["access_token"];
 
-//     if (accessToken == null) {
-//       return null;
-//     }
+    // if (accessToken == null) {
+    //   return null;
+    // }
 
-//     // Step 4: Sign in with Firebase using GitHub Access Token
-//     final AuthCredential credential = GithubAuthProvider.credential(accessToken);
+    // // Step 4: Sign in with Firebase using GitHub Access Token
+    // final AuthCredential credential = GithubAuthProvider.credential(accessToken);
 
-//     UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+    // UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(redirectUri);
 
-//     return userCredential;
-//   } on FirebaseAuthException catch (e) {
-//     throw e.message ?? "";
-//   }
-// }
+    // return UserCredential;
+  } on FirebaseAuthException catch (e) {
+    throw e.message ?? "";
+  }
+}
  
   /// Login using facebook but it need some setup
   /// https://developers.facebook.com/docs/development/register/ for creating developer account

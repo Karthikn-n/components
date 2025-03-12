@@ -7,6 +7,7 @@ import 'package:components/components/input-methods/input_fields.dart';
 import 'package:components/components/maps/google_maps_component.dart';
 import 'package:components/components/media/media_components_home.dart';
 import 'package:components/components/navigation/navigation_home.dart';
+import 'package:components/components/notifications/notification_component_home.dart';
 import 'package:components/components/sync/offline_online_sync.dart';
 import 'package:components/components/views/views_home.dart';
 import 'package:components/flutter/change_dependencies.dart';
@@ -52,67 +53,67 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   spacing: 15,
                   children: [
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/cupertinoWidgets"), 
-                      child: Text("Cupertino widgets")
+                      child: Text("Cupertino widgets", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),),
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ButtonsComponent(),)), 
                       child: Text("Button Components")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DialogsHome(),)), 
                       child: Text("Dialog Components")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => InputTextFieldsComponents(),)), 
                       child: Text("Text Field Components")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ViewsHome(),)), 
                       child: Text("Views")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TextsComponents(),)), 
                       child: Text("Texts")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationHome(),)), 
                       child: Text("Navigations")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MediaComponentsHome(),)), 
-                      child: Text("File & Hardware Handling")
+                      child: Text("Files & Media Handling")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AuthenticationHome(),)), 
                       child: Text("Authentication")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PermissionComponentHome(),)), 
                       child: Text("Permissions")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => GoogleMapsComponent(),)), 
                       child: Text("Maps")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => OfflineOnlineSync(),)), 
                       child: Text("Offline/Online Sync")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationComponentsHome(),)), 
                       child: Text("Animations")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/svgPictures"), 
                       child: Text("Svg pictures")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/backdrop"), 
                       child: Text("Filtered images")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () async {
                         bool canPop = await Navigator.maybePop(context);
                         if (!canPop) {
@@ -124,37 +125,41 @@ class HomeScreen extends StatelessWidget {
                       }, 
                       child: Text("Maybe Pop")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/dragdrop"), 
                       child: Text("Draggable")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/listeners"), 
                       child: Text("Listeners")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/layout"), 
                       child: Text("Layout Builder")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.pushNamed(context, "/fitted"), 
                       child: Text("Fitted box")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenSizeExample(),)),
                       child: Text("didChangeDependencies()")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PostAndComments(),)),
                       child: Text("Isolate calling")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CommentScreen(),)),
                       child: Text("Stream implementation")
                     ),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => WebSocketExample(),)),
                       child: Text("Web socket")
+                    ),
+                    FilledButton(
+                      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationComponentHome(),)),
+                      child: Text("Notifications")
                     ),
                     SizedBox(height: kToolbarHeight,)
                   ],
